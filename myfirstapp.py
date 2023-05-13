@@ -30,7 +30,7 @@ elif option=='T n C':
         'Intplan': ['yes', 'yes', 'yes', 'no'],
         'Churn Status': [0, 0, 0, 1]
         })) 
- else:
+else:
     'Starting a long computation...'
     
     latest_iteration = st.empty()
