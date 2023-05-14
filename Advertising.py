@@ -1,4 +1,4 @@
-%%writefile Advertising.py
+%%writefile /content/Advertising.py
 import streamlit as st
 import pandas as pd
 import pickle
