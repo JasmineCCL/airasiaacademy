@@ -1,3 +1,4 @@
+%%writefile Advertising.py
 import streamlit as st
 import pandas as pd
 import pickle
@@ -11,9 +12,9 @@ This app predicts the **Advertising** sales!
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    TV = st.sidebar.slider('TV', 0, 300, 100)
-    Radio = st.sidebar.slider('Radio',0, 100, 50)
-    Newspaper = st.sidebar.slider('Newspaper', 0, 100, 20)
+    TV = st.sidebar.slider('Number of TV', 0, 200, 100)
+    Radio = st.sidebar.slider('Number of Radio',0, 300, 10)
+    Newspaper = st.sidebar.slider('Number of Newspaper', 0, 100, 50)
     data = {'TV': TV,
             'Radio': Radio,
             'Newspaper': Newspaper}
@@ -25,7 +26,7 @@ df = user_input_features()
 st.subheader('User Input parameters')
 st.write(df)
 
-loaded_model = pickle.load(open("Sales.h5", "rb"))
+loaded_model = pickle.load(open("sales.h5", "rb"))
 
 prediction = loaded_model.predict(df)
 
